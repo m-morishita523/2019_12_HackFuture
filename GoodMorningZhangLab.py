@@ -15,4 +15,4 @@ plt.legend()
 plt.show()
 
 #m-morishita
-print("HELLO! MATSUO-SAN")
+print("HELLO! MATSUO-SAN!")
