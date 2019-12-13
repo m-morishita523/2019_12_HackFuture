@@ -13,3 +13,6 @@ plt.legend()
 
 # プロット表示(設定の反映)
 plt.show()
+
+#m-morishita
+print("HELLO! MATSUO-SAN")
