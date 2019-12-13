@@ -16,3 +16,6 @@ plt.show()
 
 #m-morishita
 print("HELLO! MATSUO-SAN!")
+
+#s-sakakibara
+print("Nyunga dayo!")
