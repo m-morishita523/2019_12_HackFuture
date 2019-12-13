@@ -19,3 +19,4 @@ print("HELLO! MATSUO-SAN!")
 
 #s-sakakibara
 print("Nyunga dayo!")
+print("dayo")
