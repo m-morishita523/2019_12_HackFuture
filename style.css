@@ -1,0 +1,7 @@
+.img-area {
+    display: flex;
+}
+
+.img-box{
+    display: inline-block;
+}
