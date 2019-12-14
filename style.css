@@ -21,6 +21,14 @@
     transform: rotateY(360deg);
 }
 
+.img-test{
+    transition: all 1s linear 0s;
+}
+
+.img-test:hover{
+    transform: rotateY(360deg);
+}
+
 body {
     background-color: black;
     text-align: center;
