@@ -17,11 +17,11 @@
 }
 
 .img-box img{
-    animation: anim-out .5s ease-out forwards;
+    animation: anim-out 1.5s ease-out forwards;
 }
 
 .img-box img:hover {
-    animation: anim .5s ease-out forwards;
+    animation: anim 1.5s ease-out forwards;
 }
 
 @keyframes anim {
@@ -31,14 +31,6 @@
 @keyframes anim-out {
     0%   { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
-}
-
-.img-test img{
-    transition: all 1s linear 0s;
-}
-
-.img-test img:hover{
-    transform: rotateY(360deg);
 }
 
 body {
