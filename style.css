@@ -9,6 +9,8 @@
 .img-box{
     display: inline-block;
     margin:10px;
+    width: 250px;
+    height: 250px;
 }
 
 .img-box img{
