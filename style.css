@@ -9,7 +9,6 @@
 }
 
 .img-box{
-    transition: all 1s linear 0s;
     display: inline-block;
     margin:5px;
     width: 250px;
