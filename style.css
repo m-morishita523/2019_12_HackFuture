@@ -17,9 +17,9 @@
     opacity: 0;
 }
 
-.img-box:hover {
+/*.img-box:hover {
     transform: rotateY(360deg);
-}
+}*/
 
 body {
     background-color: black;
