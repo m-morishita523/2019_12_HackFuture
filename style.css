@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 1940px;
-    margin: 0 -10px;
+    margin: 0 -70px;
 }
 
 .img-box{
@@ -22,4 +22,5 @@
 body {
     background-color: black;
     text-align: center;
+    overflow-x: hidden;
 }
