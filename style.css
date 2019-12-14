@@ -17,7 +17,7 @@
 }
 
 .img-box:hover img{
-    transform: rotateY( 360deg ) ;
+    transform: rotateY( 360deg );
 }
 
 .img-box img{
