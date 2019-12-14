@@ -8,14 +8,11 @@
     text-align: center;
 }
 
-.img-box-parent {
+.img-box{
     display: inline-block;
     margin:5px;
     width: 250px;
     height: 250px;
-}
-
-.img-box {
     opacity: 0;
 }
 
