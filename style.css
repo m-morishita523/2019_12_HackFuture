@@ -28,26 +28,29 @@ body {
     overflow-y: hidden;
 }
 
-.img-box:nth-child(1) {
-    animation: r7 0.5s ease 0.5s 1 forwards;
+.img-box:nth-child(1), .img-box:nth-child(9), .img-box:nth-child(17), .img-box:nth-child(25) {
+    animation: r7 0.5s ease 0.2s 1 forwards;
 }
-.img-box:nth-child(2) {
+.img-box:nth-child(2), .img-box:nth-child(10), .img-box:nth-child(18), .img-box:nth-child(26) {
+    animation: r7 0.5s ease 0.4s 1 forwards;
+}
+.img-box:nth-child(3), .img-box:nth-child(11), .img-box:nth-child(19), .img-box:nth-child(27) {
+    animation: r7 0.5s ease 0.6s 1 forwards;
+}
+.img-box:nth-child(4), .img-box:nth-child(12), .img-box:nth-child(20), .img-box:nth-child(28) {
+    animation: r7 0.5s ease 0.8s 1 forwards;
+}
+.img-box:nth-child(5), .img-box:nth-child(13), .img-box:nth-child(21), .img-box:nth-child(29) {
     animation: r7 0.5s ease 1.0s 1 forwards;
 }
-.img-box:nth-child(3) {
-    animation: r7 0.5s ease 1.5s 1 forwards;
+.img-box:nth-child(6), .img-box:nth-child(14), .img-box:nth-child(22), .img-box:nth-child(30) {
+    animation: r7 0.5s ease 1.2s 1 forwards;
 }
-.img-box:nth-child(4) {
-    animation: r7 0.5s ease 2.0s 1 forwards;
+.img-box:nth-child(7), .img-box:nth-child(15), .img-box:nth-child(23), .img-box:nth-child(31) {
+    animation: r7 0.5s ease 1.4s 1 forwards;
 }
-.img-box:nth-child(5) {
-    animation: r7 0.5s ease 2.5s 1 forwards;
-}
-.img-box:nth-child(6) {
-    animation: r7 0.5s ease 3.0s 1 forwards;
-}
-.img-box:nth-child(7) {
-    animation: r7 0.5s ease 3.5s 1 forwards;
+.img-box:nth-child(8), .img-box:nth-child(16), .img-box:nth-child(24), .img-box:nth-child(32) {
+    animation: r7 0.5s ease 1.6s 1 forwards;
 }
 
 @keyframes r7 {
