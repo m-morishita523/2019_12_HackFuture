@@ -9,10 +9,10 @@ import glob
 @app.route('/')
 def show_images():
     images_data = []
-    img_path = 'img/*'
+    img_path = 'main/static/img/*'
     img_path_list = glob.glob(img_path)
     for path in img_path_list:
-        item = {'image': path, 'area': 'dammy'}
+        item = {'image': path.strip('main/'), 'area': 'dammy'}
         # item['image'] = path
         # item['area'] = 'dammy'
         images_data.append(item)

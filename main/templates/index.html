@@ -1,18 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>flask demo app</title>
-    </head>
-    <body>
-        <!-- <form action="{{ url_for('add_entry') }}" method=post>
-            <input type="text" name="title">
-            <input type="text" name="text">
-            <input type="submit">
-        </form> -->
-        <ul class="images_data">
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <title>テスト</title>
+  </head>
+  <body>
+    <div class="img-area">
+        <div class="img-box"><img src="static/img/Aerial.bmp"></div>
         {% for item in images_data %}
-        <li>{{item.image}} / {{item.area}}</li>
+        <div class="img-box"><img src="{{item.image}}"></div>
         {% endfor %}
-        </ul>
-    </body>
+        <!-- <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div>
+        <div class="img-box"><img src="./img/Aerial.bmp"></div> -->
+    </div>
+</body>
 </html>
