@@ -28,25 +28,25 @@ body {
     overflow-y: hidden;
 }
 
-.img-area:nth-child(1) {
+.img-box:nth-child(1) {
     animation: r7 1s linear infinite;
 }
-.img-area:nth-child(2) {
+.img-box:nth-child(2) {
     animation: r7 0.5s ease 0.5s 1 forwards;
 }
-.img-area:nth-child(3) {
+.img-box:nth-child(3) {
     animation: r7 0.5s ease 0.5s 1 forwards;
 }
-.img-area:nth-child(4) {
+.img-box:nth-child(4) {
     animation: r7 0.5s ease 0.5s 1 forwards;
 }
-.img-area:nth-child(5) {
+.img-box:nth-child(5) {
     animation: r7 0.5s ease 0.5s 1 forwards;
 }
-.img-area:nth-child(6) {
+.img-box:nth-child(6) {
     animation: r7 0.5s ease 0.5s 1 forwards;
 }
-.img-area:nth-child(7) {
+.img-box:nth-child(7) {
     animation: r7 0.5s ease 0.5s 1 forwards;
 }
 
