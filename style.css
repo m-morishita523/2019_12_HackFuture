@@ -27,3 +27,12 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
+.img-box {
+    animation: r7 1s linear infinite;
+  }
+   
+  @keyframes r7 {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
