@@ -16,6 +16,10 @@
     opacity: 0;
 }
 
+.img-box:hover {
+    animation: img-rotation 0.5s ease forwards;
+}
+
 .img-box img{
     object-fit: cover;
     width: 250px;
