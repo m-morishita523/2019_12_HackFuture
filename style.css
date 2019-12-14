@@ -13,6 +13,9 @@
     margin:5px;
     width: 250px;
     height: 250px;
+}
+
+.img-box {
     opacity: 0;
 }
 
