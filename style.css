@@ -2,8 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 2080px;
-    margin: auto;
+    width: 1940px;
+    margin: 0 -10px;
 }
 
 .img-box{
