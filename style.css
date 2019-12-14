@@ -9,16 +9,16 @@
 }
 
 .img-box{
+    transition: all 1s linear 0s;
     display: inline-block;
     margin:5px;
     width: 250px;
     height: 250px;
     opacity: 0;
-    transition: all 1s ease;
 }
 
 .img-box:hover {
-    transform: rotateY(720deg);
+    transform: rotateY(360deg);
 }
 
 body {
