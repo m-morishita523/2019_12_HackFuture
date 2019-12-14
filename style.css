@@ -18,6 +18,9 @@
 
 .img-box img{
     animation: anim-out 1.5s ease-out forwards;
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
 }
 
 .img-box img:hover {
