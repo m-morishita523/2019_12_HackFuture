@@ -21,11 +21,11 @@
     transform: rotateY(360deg);
 }
 
-.img-test{
+.img-test img{
     transition: all 1s linear 0s;
 }
 
-.img-test:hover{
+.img-test img:hover{
     transform: rotateY(360deg);
 }
 
