@@ -16,7 +16,7 @@
     opacity: 0;
 }
 
-.img-box:hover {
+.img-box:hover img{
     transform: rotateY( 360deg ) ;
 }
 
