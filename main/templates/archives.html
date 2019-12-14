@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>flask demo app</title>
+    </head>
+    <body>
+        <form action="{{ url_for('add_archive') }}" method=post>
+            <input type="text" name="shopname">
+            <input type="text" name="description">
+            <input type="submit">
+        </form>
+        <ul class="archives">
+        {% for item in archives %}
+        <li>{{item.shopname}} / {{item.description}}</li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>
