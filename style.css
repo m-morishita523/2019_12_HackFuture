@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 2080px;
-    margin: 0 -70px;
+    height: 1300px;
+    margin: 110px -70px;
     text-align: center;
 }
 
@@ -24,4 +25,5 @@ body {
     background-color: black;
     text-align: center;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
