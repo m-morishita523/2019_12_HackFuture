@@ -95,16 +95,18 @@ body {
     z-index: 10;
     background-color: black;
     padding: 5px;
+}
+
+.img-box .hidden img{
     object-fit: cover;
     width: 250px;
     height: 250px;
 }
 
-
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
 .img-box input:checked ~ .hidden {
     height: auto;
-    opacity: .8; /* 文字を表示 */
+    opacity: 0.8; /* 文字を表示 */
 }
 
 
