@@ -75,7 +75,7 @@ body {
     display: none;
 }
 
-.p-place {
+.img-box p.p-place {
     height: 0;
     padding: 0;
     overflow: hidden;
@@ -83,7 +83,7 @@ body {
     transition: 0.8s;
 }
 
-.img_box input:checked ~ .p-place{
+.img_box input:checked ~ .img-box p.p-place{
     padding: 10px 0;
     height: auto;
     opacity: 1;
