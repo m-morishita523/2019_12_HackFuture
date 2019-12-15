@@ -27,9 +27,18 @@
     animation: anim 1.5s ease-out forwards;
 }
 
-.img-box img:active{
+.img-info img:active{
     background-color: black;
     opacity: .5;
+}
+
+.img-info p {
+    opacity: 0;
+}
+
+.img-info p:active{
+    color: white;
+    opacity: .8;
 }
 
 @keyframes anim {
