@@ -95,6 +95,7 @@ body {
     background-color: black;
     height: auto;
 }
+
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
 .img-box input:checked ~ .hidden-text {
     height: auto;
