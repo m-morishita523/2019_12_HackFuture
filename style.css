@@ -86,6 +86,7 @@ body {
 .img-box .hidden {
     position: absolute;
     top: 0;
+    left: 50%;
     color: white;    /* 文字色 */
     font-weight: bold; /* 文字の太さ */
     overflow: hidden;
@@ -94,13 +95,11 @@ body {
     z-index: 10;
     background-color: black;
     padding: 5px;
-}
-
-.img-box .hidden{
     object-fit: cover;
     width: 250px;
     height: 250px;
 }
+
 
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
 .img-box input:checked ~ .hidden-text {
