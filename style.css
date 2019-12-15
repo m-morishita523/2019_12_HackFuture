@@ -27,6 +27,11 @@
     animation: anim 1.5s ease-out forwards;
 }
 
+.img-info img:active{
+    background-color: black;
+    opacity: .5;
+}
+
 @keyframes anim {
     0%   { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
