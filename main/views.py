@@ -33,6 +33,7 @@ def show_images():
             'result': jsonData
         }
         data.append(one)
+        random.shuffle(data)
     
     return flask.render_template('index.html', images_data = data)
 
@@ -61,5 +62,6 @@ def show_images_test():
             'result': jsonData
         }
         data.append(one)
+        random.shuffle(data)
     
     return flask.render_template('test.html', images_data = data)
