@@ -83,7 +83,7 @@ body {
     display: none; /* 非表示 */
 }
 /** 表示・非表示を切り替えるテキスト（「クリックされました！」の部分） **/
-.img-box .hidden-text {
+.img-box .hidden {
     position: absolute;
     top: 0;
     color: white;    /* 文字色 */
@@ -92,7 +92,16 @@ body {
     opacity: 0;        /* 文字を非表示 */
     transition: 0.2s;  /* 文字が表示・非表示される時のスピード */
     z-index: 10;
+    background-color: black;
+    padding: 5px;
 }
+
+.img-box .hidden{
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
 .img-box input:checked ~ .hidden-text {
     height: auto;
