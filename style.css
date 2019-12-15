@@ -6,7 +6,6 @@
     height: 1300px;
     margin: 0 -70px 110px -70px;
     text-align: center;
-    position: relative;
 }
 
 .img-box{
@@ -16,6 +15,7 @@
     height: 250px;
     opacity: 0;
     /*cursor :pointer;*/
+    position: relative;
 }
 
 .img-box img{
@@ -72,6 +72,7 @@ body {
     font-weight: bold;                /* 文字の太さ */
     cursor: pointer;
     margin: 0;               /* ボタンにカーソルを合わせた時に指アイコンを表示 */
+    position: relative;
 }
 /** ボタンクリック時のボタンを押し込む動作 **/
 .img-box label:active {
@@ -82,6 +83,10 @@ body {
     display: none; /* 非表示 */
 }
 /** 表示・非表示を切り替えるテキスト（「クリックされました！」の部分） **/
+.img-box .hidden-text img{
+    display: block;
+}
+
 .img-box .hidden-text {
     position: absolute;
     top: 0;
