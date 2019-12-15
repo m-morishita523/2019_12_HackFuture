@@ -76,15 +76,16 @@ body {
     cursor :pointer;
 }
 
-.img-box p.p-place {
+.img_box .index-box{
     height: 0;
     padding: 0;
     overflow: hidden;
     opacity: 0;
     transition: 0.8s;
+    color: white;
 }
 
-.img_box input:checked ~ .img-box p.p-place{
+.img_box input:checked ~ div{
     padding: 10px 0;
     height: auto;
     opacity: 1;
