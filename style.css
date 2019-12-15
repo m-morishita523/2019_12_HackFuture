@@ -102,7 +102,7 @@ body {
 
 
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
-.img-box input:checked ~ .hidden-text {
+.img-box input:checked ~ .hidden {
     height: auto;
     opacity: 1; /* 文字を表示 */
 }
