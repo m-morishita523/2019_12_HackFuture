@@ -70,9 +70,9 @@ body {
     color: #332c10;                   /* ボタンの文字色 */
             /* ボタンの背景色 */
     font-weight: bold;                /* 文字の太さ */
-    padding: 0.5em 1em;               /* ボタン内側の余白 */
     cursor: pointer;
     margin: 0;               /* ボタンにカーソルを合わせた時に指アイコンを表示 */
+    position: relative;
 }
 /** ボタンクリック時のボタンを押し込む動作 **/
 .img-box label:active {
@@ -84,6 +84,8 @@ body {
 }
 /** 表示・非表示を切り替えるテキスト（「クリックされました！」の部分） **/
 .img-box .hidden-text {
+    position: absolute;
+    top: 0;
     color: white;    /* 文字色 */
     font-weight: bold; /* 文字の太さ */
     overflow: hidden;
