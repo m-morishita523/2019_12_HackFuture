@@ -50,6 +50,7 @@
 .img-info p:active{
     color: white;
     opacity: .8;
+    z-index: 10;
 }
 
 @keyframes anim {
