@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <style>
-        html { height: 100% }
-        body { height: 50% }
-        #map { height: 100%; width: 50%}
-    </style>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -26,9 +21,24 @@
   <body>
     <div class="img-area">
         {% for item in images_data %}
-        <div class="img-box" id="{{loop.index0}}"><img src="{{item.image}}"><div id="map"></div></div>
+        <div class="img-box" id="{{loop.index0}}">
+          <label for="place{{loop.index}}">
+            <img src="{{item.image}}">
+          </label>
+          <div class="hidden-text">a<div id="map"></div></div>
+        </div>
         {% endfor %}
     </div>
+
+
+    <!-- <div class="img-box">
+        <label for="place1">
+          <img src="./img/Aerial.bmp">
+        </label>
+        <input type="checkbox" id="place1"/>
+          <div class="hidden-text">ここに地名あああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+    </div> -->
+
   </body>
 </html>
 <script>
