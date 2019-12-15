@@ -94,7 +94,12 @@ body {
     transition: 0.2s;  /* 文字が表示・非表示される時のスピード */
     z-index: 10;
     background-color: black;
-    padding: 5px;
+    width: 250px;
+    height: 250px;
+}
+
+.img-box .hidden p{
+    margin: 0;
 }
 
 .img-box .hidden img{
