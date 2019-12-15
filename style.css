@@ -29,16 +29,6 @@
     animation: anim 1.5s ease-out forwards;
 }
 
-.img-info {
-    width: 250px;
-    height: 250px;
-    position: relative;
-}
-
-.img-info img:active{
-    background-color: black;
-    opacity: .5;
-}
 /*
 .img-info p {
     opacity: 0;
@@ -77,7 +67,7 @@ body {
     cursor :pointer;
 }
 
-.img_box .index-box{
+.img_box .hidden-box{
     height: 0;
     padding: 0;
     overflow: hidden;
@@ -86,6 +76,7 @@ body {
     color: white;
     height:250px;
     position: absolute;
+    top: 0;
 }
 
 .img_box input:checked ~ div{
