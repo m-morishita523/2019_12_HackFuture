@@ -62,39 +62,48 @@ body {
     font-family: "Noto Sans JP";
 }
 
+
+
+/** ボタン **/
+.img-box label {
+    display: inline-block;
+    color: #332c10;                   /* ボタンの文字色 */
+    background-color: #ffdb4f;        /* ボタンの背景色 */
+    font-weight: bold;                /* 文字の太さ */
+    padding: 0.5em 1em;               /* ボタン内側の余白 */
+    border-bottom: solid 4px #ccb03f; /* ボタンの影部分 */
+    border-radius: 3px;               /* 角丸 */
+    cursor: pointer;                  /* ボタンにカーソルを合わせた時に指アイコンを表示 */
+}
+/** ボタンクリック時のボタンを押し込む動作 **/
+.img-box label:active {
+    -webkit-transform: translateY(4px); /* Chrome、Safari用 */
+    -moz-transform: translateY(4px);    /* Firefox用 */
+    -ms-transform: translateY(4px);     /* IE用 */
+    transform: translateY(4px);
+    border-bottom: none;
+}
+/** チェックボックス **/
 .img-box input {
-    cursor :pointer;
-    height: 250px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none; /* 非表示 */
 }
-
-.img-box label{
-    height: 250px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.hidden-box{
-    padding: 0;
+/** 表示・非表示を切り替えるテキスト（「クリックされました！」の部分） **/
+.img-box .hidden-text {
+    color: #C9171E;    /* 文字色 */
+    font-weight: bold; /* 文字の太さ */
     overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-    color: white;
-    height:250px;
-    width: 250px;
-    position: absolute;
-    top: 0;
+    opacity: 0;        /* 文字を非表示 */
+    transition: 0.2s;  /* 文字が表示・非表示される時のスピード */
+}
+/** チェックボックスにチェックが入った時の、テキストの処理 **/
+.img-box input:checked ~ .hidden-text {
+    height: auto;
+    opacity: 1; /* 文字を表示 */
 }
 
-.img_box input:checked ~ div{
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
-    z-index: 10;
-}
+
+
+
 
 .img-box:nth-child(1), .img-box:nth-child(9), .img-box:nth-child(17), .img-box:nth-child(25), .img-box:nth-child(33) {
     animation: img-rotetation 0.5s ease 0.2s 1 forwards, img-opacity 0.5s ease 0.2s 1 forwards;
