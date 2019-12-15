@@ -1,64 +1,63 @@
 import flask 
+
 from main import app
 from main.models import Entry, EnglishArchive
 from main import db
-from main.function import jp2en_transrator
+from main.function import jp2en_transrator, get_file, get_record, URL, APPID, API_TOKEN
 import requests
 import glob
+import random
 
 @app.route('/')
 def show_images():
-    images_data = []
-    img_path = 'main/static/img/*'
-    img_path_list = glob.glob(img_path)
-    for path in img_path_list:
-        item = {'image': path.strip('main/'), 'area': 'dammy'}
-        # item['image'] = path
-        # item['area'] = 'dammy'
-        images_data.append(item)
+    RESP = get_record(URL, API_TOKEN, APPID)
 
-    return flask.render_template('index.html', images_data = images_data)
+    data = []
 
+    for item in RESP:
+        ID = item["$id"]["value"]
+        IMAGE = item["image"]["value"][0]["fileKey"]
+        AREA = item["area"]["value"]
+        get_file(URL, API_TOKEN, IMAGE, AREA, ID)
+        url = "https://api.ekispert.jp/v1/json/search/course/plain?key=eBBWPyXMYduCN759&from=35.70606813177083,139.651624325722,wgs84,2000&to=" + item["lat"]["value"] + ',' + item["lng"]["value"] + ",wgs84,2000"
+        response = requests.get(url)
+        jsonData = response.json()
+        one = {
+            'id': item["$id"]["value"],
+            'igame_id': item["image"]["value"][0]["fileKey"],
+            'area': item["area"]["value"],
+            'lat': item["lat"]["value"],
+            'lng': item["lng"]["value"],
+            'image': 'static/img/' + item["$id"]["value"] + '/' + item["area"]["value"] + '.png',
+            'result': jsonData
+        }
+        data.append(one)
+    
+    return flask.render_template('index.html', images_data = data)
 
+@app.route('/test')
+def show_images_test():
+    RESP = get_record(URL, API_TOKEN, APPID)
 
-# @app.route('/')
-# def show_entries():
-#     entries = Entry.query.all()
+    data = []
 
-#     return flask.render_template('index.html', entries=entries)
-
-
-@app.route('/add', methods=['POST'])
-def add_entry():
-    entry = Entry(
-        title = flask.request.form['title'],
-        text = flask.request.form['text']
-    )
-    db.session.add(entry)
-    db.session.commit()
-
-    return flask.redirect(flask.url_for('show_entries'))
-
-@app.route('/archives.html')
-def show_archives():
-    archives = EnglishArchive.query.all()
-
-    return flask.render_template('archives.html', archives=archives)
-
-
-@app.route('/add_archive', methods=['POST'])
-def add_archive():
-    archive = EnglishArchive(
-        shopname = flask.request.form['shopname'],
-        description = flask.request.form['description']
-    )
-
-    # result_shopname = requests.get('https://script.google.com/macros/s/AKfycbxjITyi5QlS-NhSAzg6BRQbiWPSK05qnOF1DYl9H_FC_4tzlOM/exec?text=' + archive.shopname + '&source=ja&target=en')
-    # result_shopname.encoding
-    archive.shopname = jp2en_transrator(archive.shopname)
-    archive.description = jp2en_transrator(archive.description)
-
-    db.session.add(archive)
-    db.session.commit()
-
-    return flask.redirect(flask.url_for('show_archives'))
+    for item in RESP:
+        ID = item["$id"]["value"]
+        IMAGE = item["image"]["value"][0]["fileKey"]
+        AREA = item["area"]["value"]
+        get_file(URL, API_TOKEN, IMAGE, AREA, ID)
+        url = "https://api.ekispert.jp/v1/json/search/course/plain?key=eBBWPyXMYduCN759&from=35.70606813177083,139.651624325722,wgs84,2000&to=" + item["lat"]["value"] + ',' + item["lng"]["value"] + ",wgs84,2000"
+        response = requests.get(url)
+        jsonData = response.json()
+        one = {
+            'id': item["$id"]["value"],
+            'igame_id': item["image"]["value"][0]["fileKey"],
+            'area': item["area"]["value"],
+            'lat': item["lat"]["value"],
+            'lng': item["lng"]["value"],
+            'image': 'static/img/' + item["$id"]["value"] + '/' + item["area"]["value"] + '.png',
+            'result': jsonData
+        }
+        data.append(one)
+    
+    return flask.render_template('test.html', images_data = data)

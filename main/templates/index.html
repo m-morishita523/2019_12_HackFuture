@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiDateTime/expCss/expGuiDateTime.css">
+    <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiStation/expCss/expGuiStation.css">
+    <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiCondition/expCss/expGuiCondition.css">
+    <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiCourse/expCss/expGuiCourse.css">
+    <link class="css" rel="stylesheet" type="text/css" href="static/gui/sample/expSample.css">
+    <script type="text/javascript" src="static/gui/expGuiDateTime/expGuiDateTime.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/gui/expGuiCondition/expGuiCondition.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/gui/expGuiStation/expGuiStation.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/gui/expGuiCourse/expGuiCourse.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/gui/sample/expSample.js" charset="UTF-8"></script>
+
     <title>映え</title>
   </head>
   <body>
     <div class="img-area">
-        <div class="img-box"><img src="static/img/Aerial.bmp"></div>
         {% for item in images_data %}
         <div class="img-box"><img src="{{item.image}}"></div>
+        <input class="id-value-box" type="hidden" value="{{item.id}}">
+        <input class="area-value-box" type="hidden" value="{{item.area}}">
         {% endfor %}
     </div>
   </body>
 </html>
+<script>
+var images_data = {{ images_data|tojson }};
+console.log(images_data);
+
+
+// const timer = 5000    // ミリ秒で間隔の時間を指定
+// window.addEventListener('load',function(){
+//   setInterval('location.reload()',timer);
+// });
+</script>

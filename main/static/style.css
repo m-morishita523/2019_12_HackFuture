@@ -17,9 +17,20 @@
 }
 
 .img-box img{
-    object-fit: cover;
-    width: 250px;
-    height: 250px;
+    animation: anim-out 1.5s ease-out forwards;
+}
+
+.img-box img:hover {
+    animation: anim 1.5s ease-out forwards;
+}
+
+@keyframes anim {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+@keyframes anim-out {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
 }
 
 body {

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html { height: 100% }
+            body { height: 50% }
+            #map { height: 100%; width: 50%}
+        </style>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyC8BB0d3kkywDRZS9fH-YCXUqmhKIHmJZg&language=ja"></script>
+        <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiDateTime/expCss/expGuiDateTime.css">
+        <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiStation/expCss/expGuiStation.css">
+        <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiCondition/expCss/expGuiCondition.css">
+        <link class="css" rel="stylesheet" type="text/css" href="static/gui/expGuiCourse/expCss/expGuiCourse.css">
+        <link class="css" rel="stylesheet" type="text/css" href="static/gui/sample/expSample.css">
+        <script type="text/javascript" src="static/gui/expGuiDateTime/expGuiDateTime.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="static/gui/expGuiCondition/expGuiCondition.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="static/gui/expGuiStation/expGuiStation.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="static/gui/expGuiCourse/expGuiCourse.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="static/gui/sample/expSample.js" charset="UTF-8"></script>
+        <title>flask demo app</title>
+    </head>
+    <body onLoad="Javasclipt:init();">
+        <div id="map"></div>
+
+        <!-- 経路表示パーツ -->
+        <div id="result"></div>
+        <!-- サンプル用ボタン -->
+        <h3 class="exp_sample_header">JSONデータ</h3>
+        <input id="ekispa-to-gui" type="button" value="経路を再表示" onClick="Javascript:restore();">
+        <!-- <textarea id="resultData" style="width: 100%;height: 10em;"></textarea> -->
+    </body>
+</html>
+<script>
+images_data = {{images_data|tojson}};
+console.log(images_data);
+result = images_data[0]['result'];
+
+$('#ekispa-to-gui').click(function() {
+    restore(result);
+})
+
+function restore(json){
+    // 経路を復元する
+    resultApp.setResult(JSON.stringify(json));
+}
+
+
+
+
+
+
+
+
+
+
+
+map1 = makeMap(34.2152065, 134.0185671);
+makeWay(34.1929019,134.4211328, map1)
+
+let goalMarkerImg = 'https://82mou.github.io/src/images/marker-on-dummy.png';
+let markers = {
+  goalMarker: new google.maps.MarkerImage(
+    goalMarkerImg, // 画像のパス
+    new google.maps.Size(24, 33), // マーカーのwidth,height
+    new google.maps.Point(0, 0), // 画像データの中で、どの部分を起点として表示させるか
+    new google.maps.Point(12, 33), // マーカーのpositionで与えられる緯度経度を画像のどの点にするか
+    new google.maps.Size(24, 33)) // 画像の大きさを拡大縮小
+};
+
+
+
+
+function makeMap(lat, lng) {
+    var LatLng = new google.maps.LatLng(lat, lng);
+    var Options = {
+        zoom: 15,      //地図の縮尺値
+        center: LatLng,    //地図の中心座標
+        mapTypeId: 'roadmap'   //地図の種類
+    };
+    var map = new google.maps.Map(document.getElementById('map'), Options);
+    // var marker = new google.maps.Marker({position:LatLng, map:map})
+    
+    return map;
+}
+
+function makeWay(lat, lng, map) {
+    let rendererOptions = {
+        map: map, // 描画先の地図
+        draggable: true, // ドラッグ可
+        preserveViewport: true // centerの座標、ズームレベルで表示
+    };
+    let directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+    let directionsService = new google.maps.DirectionsService();
+    directionsDisplay.setMap(map);
+    let request = {
+        origin: new google.maps.LatLng(34.2152065, 134.0185671), // スタート地点
+        destination: new google.maps.LatLng(lat, lng), // ゴール地点
+        travelMode: google.maps.DirectionsTravelMode.WALKING, // 移動手段
+    };
+    directionsService.route(request, function(response,status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      new google.maps.DirectionsRenderer({
+        map: map,
+        directions: response,
+        suppressMarkers: true // デフォルトのマーカーを削除
+      });
+      let leg = response.routes[0].legs[0];
+      makeMarker(leg.end_location, markers.goalMarker, map);
+      setTimeout(function() {
+        map.setZoom(16); // ルート表示後にズーム率を変更
+      });
+    }
+  });
+}
+
+function makeMarker(position, icon, map) {
+  let marker = new google.maps.Marker({
+    position: position,
+    map: map,
+    icon: icon
+  });
+}
+
+
+
+
+let startLatLng = [35.712408, 139.776188]; // 上野駅
+let targetLatLng = [35.710552, 139.777074]; // LIG
+
+
+</script>
