@@ -93,6 +93,7 @@ body {
     transition: 0.2s;  /* 文字が表示・非表示される時のスピード */
     z-index: 10;
     background-color: black;
+    height: auto;
 }
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
 .img-box input:checked ~ .hidden-text {
