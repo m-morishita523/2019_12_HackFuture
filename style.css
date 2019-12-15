@@ -63,8 +63,18 @@ body {
 }
 
 .img-box input {
-    display: none;
     cursor :pointer;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.img-box label{
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .hidden-box{
