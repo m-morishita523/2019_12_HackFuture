@@ -19,9 +19,10 @@ def show_images():
         IMAGE = item["image"]["value"][0]["fileKey"]
         AREA = item["area"]["value"]
         get_file(URL, API_TOKEN, IMAGE, AREA, ID)
-        url = "https://api.ekispert.jp/v1/json/search/course/plain?key=eBBWPyXMYduCN759&from=35.70606813177083,139.651624325722,wgs84,2000&to=" + item["lat"]["value"] + ',' + item["lng"]["value"] + ",wgs84,2000"
-        response = requests.get(url)
-        jsonData = response.json()
+        # url = "https://api.ekispert.jp/v1/json/search/course/plain?key=eBBWPyXMYduCN759&from=35.70606813177083,139.651624325722,wgs84,2000&to=" + item["lat"]["value"] + ',' + item["lng"]["value"] + ",wgs84,2000"
+        # response = requests.get(url)
+        # jsonData = response.json()
+        jsonData = {}
         one = {
             'id': item["$id"]["value"],
             'igame_id': item["image"]["value"][0]["fileKey"],
@@ -46,9 +47,10 @@ def show_images_test():
         IMAGE = item["image"]["value"][0]["fileKey"]
         AREA = item["area"]["value"]
         get_file(URL, API_TOKEN, IMAGE, AREA, ID)
-        url = "https://api.ekispert.jp/v1/json/search/course/plain?key=eBBWPyXMYduCN759&from=35.70606813177083,139.651624325722,wgs84,2000&to=" + item["lat"]["value"] + ',' + item["lng"]["value"] + ",wgs84,2000"
-        response = requests.get(url)
-        jsonData = response.json()
+        # url = "https://api.ekispert.jp/v1/json/search/course/plain?key=eBBWPyXMYduCN759&from=35.70606813177083,139.651624325722,wgs84,2000&to=" + item["lat"]["value"] + ',' + item["lng"]["value"] + ",wgs84,2000"
+        # response = requests.get(url)
+        # jsonData = response.json()
+        jsonData = {}
         one = {
             'id': item["$id"]["value"],
             'igame_id': item["image"]["value"][0]["fileKey"],
