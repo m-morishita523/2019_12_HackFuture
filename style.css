@@ -73,6 +73,7 @@ body {
 
 .img-box input {
     display: none;
+    cursor :pointer;
 }
 
 .img-box p.p-place {
