@@ -15,6 +15,7 @@
     height: 250px;
     opacity: 0;
     cursor :pointer;
+    position: relative;
 }
 
 .img-box img{
@@ -83,6 +84,8 @@ body {
     opacity: 0;
     transition: 0.8s;
     color: white;
+    height:250px;
+    position: absolute;
 }
 
 .img_box input:checked ~ div{
