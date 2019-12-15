@@ -87,6 +87,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    text-align: center;
     color: white;    /* 文字色 */
     font-weight: bold; /* 文字の太さ */
     overflow: hidden;
@@ -94,24 +95,13 @@ body {
     transition: 0.2s;  /* 文字が表示・非表示される時のスピード */
     z-index: 10;
     background-color: black;
-    width: 250px;
-    height: 250px;
-}
-
-.img-box .hidden p{
-    margin: 0;
-}
-
-.img-box .hidden img{
-    object-fit: cover;
-    width: 250px;
-    height: 250px;
+    padding: 5px;
 }
 
 /** チェックボックスにチェックが入った時の、テキストの処理 **/
 .img-box input:checked ~ .hidden {
     height: auto;
-    opacity: 0.8; /* 文字を表示 */
+    opacity: 1; /* 文字を表示 */
 }
 
 
