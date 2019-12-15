@@ -22,10 +22,10 @@
     <div class="img-area">
         {% for item in images_data %}
         <div class="img-box" id="{{loop.index0}}">
-          <label for="place{{loop.index}}">
-            <img src="{{item.image}}">
-          </label>
-          <div class="hidden-text">a<div id="map"></div></div>
+          <!-- <label for="place{{loop.index}}"> -->
+            <div id="image{{loop.index0}}"><img src="{{item.image}}"></div>
+            <div id="map{{loop.index0}}" style="height:250px;width:250px;z-index:0;"></div>
+          <!-- </label> -->
         </div>
         {% endfor %}
     </div>
@@ -45,12 +45,19 @@
 var images_data = {{ images_data|tojson }};
 console.log(images_data);
 
+// map1 = makeMap(34.2152065, 134.0185671, 'map0');
+
 {% for item in images_data %}
   $('#'+'{{loop.index0}}').click(function() {
-    console.log({{item.lat}});
-    map1 = makeMap(34.2152065, 134.0185671);
-    console.log('mapok');
-    makeWay({{item.lat}}, {{item.lng}}, map1)
+    map = makeMap(34.2152065, 134.0185671, 'map' + '{{loop.index0}}');
+    makeWay({{item.lat}}, {{item.lng}}, map);
+    if($('#'+'image{{loop.index0}}').is(':hidden')){
+      $('#'+'map{{loop.index0}}').hide();
+      $('#'+'image{{loop.index0}}').show();
+    } else {
+      $('#'+'image{{loop.index0}}').hide();
+      $('#'+'map{{loop.index0}}').show();
+    }
   });
 {% endfor %}
 
@@ -67,14 +74,14 @@ let markers = {
     new google.maps.Size(24, 33)) // 画像の大きさを拡大縮小
 };
 
-function makeMap(lat, lng) {
+function makeMap(lat, lng, string) {
     var LatLng = new google.maps.LatLng(lat, lng);
     var Options = {
         zoom: 15,      //地図の縮尺値
         center: LatLng,    //地図の中心座標
         mapTypeId: 'roadmap'   //地図の種類
     };
-    var map = new google.maps.Map(document.getElementById('map'), Options);
+    var map = new google.maps.Map(document.getElementById(string), Options);
     // var marker = new google.maps.Marker({position:LatLng, map:map})
     
     return map;
