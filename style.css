@@ -47,7 +47,7 @@
     font-weight: bold;
 }
 
-.img-info p:active{
+.img-info img:active p{
     color: white;
     opacity: .8;
     z-index: 10;
