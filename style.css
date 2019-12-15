@@ -27,6 +27,12 @@
     animation: anim 1.5s ease-out forwards;
 }
 
+.img-info {
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
 .img-info img:active{
     background-color: black;
     opacity: .5;
@@ -34,6 +40,11 @@
 
 .img-info p {
     opacity: 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    text-align: center;
+    font-weight: bold;
 }
 
 .img-info p:active{
@@ -55,6 +66,7 @@ body {
     text-align: center;
     overflow-x: hidden;
     overflow-y: hidden;
+    font-family: "Noto Sans JP";
 }
 
 .img-box:nth-child(1), .img-box:nth-child(9), .img-box:nth-child(17), .img-box:nth-child(25), .img-box:nth-child(33) {
