@@ -1,0 +1,3 @@
+[submodule "demointeraction/handtracking"]
+	path = demointeraction/handtracking
+	url = https://github.com/victordibia/handtracking.git
